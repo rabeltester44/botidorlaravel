@@ -46,7 +46,6 @@ class Worker(Thread):
 		while True:
 			func, args, kargs = self.tasks.get()
 			try: func(*args, **kargs)
-			except Exception, e: print(e)
 			self.tasks.task_done()
 
 class ThreadPool:
